@@ -1,6 +1,5 @@
 package com.example.martechfirsttask;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvHelloMessage;
-    Button btnChangeColor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +24,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        final Button btnStartWork = findViewById(R.id.btnStartWork);
-        final Button btnChangeColor = findViewById(R.id.btnChangeColor);
-        tvHelloMessage = findViewById(R.id.tvHelloMessage);
-
-        btnStartWork.setOnClickListener(v -> tvHelloMessage.setText("Work Started"));
-
-        btnChangeColor.setOnClickListener(v -> tvHelloMessage.setTextColor(Color.RED));
-
+        final Button button = findViewById(R. id. btnStartWork);
+        button. setOnClickListener(new View. OnClickListener() {
+            public void onClick(View v) {
+                TextView tvHelloMessage = findViewById(R. id. tvHelloMessage);
+                tvHelloMessage.setText("Work Started");
+            }
+        });
     }
 }
